@@ -150,6 +150,20 @@ argument_specs:
               vrf:
                 description: Set VRF tenant.
                 type: str
+          bridge_vlans:
+            description: Attributes for bridge vlan
+            type: list
+            elements: dict
+            options:
+              id:
+                description: VLAN ID
+                type: int
+              pvid:
+                description: VLAN PVID
+                type: int
+              egress_untagged:
+                description: Untagged ID for egress traffic
+                type: int
           link:
             description: Attributes of the link used by the network.
             type: dict

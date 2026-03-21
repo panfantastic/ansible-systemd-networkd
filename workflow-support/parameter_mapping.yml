@@ -209,6 +209,11 @@ network_dhcp_server_arguments:
   timezone: Timezone
   uplink_interface: UplinkInterface
 
+network_bridge_vlan_arguments:
+  id: "VLAN"
+  pvid: "PVID"
+  egress_untagged: "EgressUntagged"
+
 network_dhcp_server_static_lease_arguments:
   address: Address
   mac_address: MACAddress

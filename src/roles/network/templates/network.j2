@@ -85,3 +85,8 @@
 [DHCPServerStaticLease]
 {{ macros.generate_mapped_arguments(network_dhcp_server_static_lease_arguments, v) }}
 {% endfor %}
+
+{% for v in network.bridge_vlans | default([]) -%}
+[BridgeVLAN]
+{{ macros.generate_mapped_arguments(network_bridge_vlan_arguments, v) }}
+{% endfor %}
