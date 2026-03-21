@@ -227,3 +227,9 @@ wireguard_peer_arguments:
   public_key: PublicKey
   route_metric: RouteMetric
   route_table: RouteTable
+
+vxlan_arguments:
+  vni: "VNI"
+  local: "Local"
+  destination_port: "DestinationPort"
+  mac_learning: "MacLearning"

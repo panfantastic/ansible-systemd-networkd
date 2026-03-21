@@ -1,0 +1,10 @@
+---
+- name: manage VXLAN devices
+  ansible.builtin.include_tasks: "{{ role_path }}/tasks/vxlan.yml"
+  loop: "{{ vxlans }}"
+  loop_control:
+    loop_var: vxlan
+    label: "{{ vxlan.name }}"
+
+- name: run handlers if needed
+  ansible.builtin.meta: flush_handlers

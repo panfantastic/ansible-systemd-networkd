@@ -1,0 +1,18 @@
+{% import 'macros.j2' as macros %}
+
+{% if "match" in vxlan -%}
+{% set m=vxlan.match %}
+[Match]
+  {% if "system" in m -%}
+{{ macros.generate_mapped_arguments(match_system_arguments, m.system) }}
+  {% endif %}
+{% endif %}
+
+[NetDev]
+Name={{ vxlan.name }}
+Kind=vxlan
+
+{% if "vxlan" in vxlan -%}
+[VXLAN]
+{{ macros.generate_mapped_arguments(vxlan_arguments, vxlan.vxlan) }}
+{% endif %}
