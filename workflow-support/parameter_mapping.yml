@@ -234,3 +234,6 @@ vxlan_arguments:
   local: "Local"
   destination_port: "DestinationPort"
   mac_learning: "MacLearning"
+
+vrf_arguments:
+  table: "Table"
