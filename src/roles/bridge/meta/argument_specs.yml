@@ -49,6 +49,12 @@ argument_specs:
               stp:
                 description: Enable Spanning Tree Protocol.
                 type: bool
+              vlan_filtering:
+                description: Enable vlan filtering
+                type: bool
+              default_pvid:
+                description: Set the PVID for the bridge
+                type: int
           match:
             description: Matching attributes of the bridge network device.
             type: dict
