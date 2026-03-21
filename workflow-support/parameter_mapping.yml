@@ -36,6 +36,8 @@ bridge_arguments:
   forward_delay_sec: ForwardDelaySec
   priority: Priority
   stp: STP
+  default_pvid: "DefaultPVID"
+  vlan_filtering: "VLANFiltering"
 
 tunnel_arguments:
   local: Local
