@@ -39,7 +39,6 @@ argument_specs:
           underlying_name:
             description: The underlying network
             type: str
-            required: true
           vxlan:
             description: Attributes of the VXLAN.
             type: dict

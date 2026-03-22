@@ -1,6 +1,7 @@
 ---
 - name: manage network drop-in directory
   become: true
+  when: vxlan.underlying_name is defined
   ansible.builtin.file:
     path: "{{ systemd_root ~ '/etc/systemd/network/' ~ vxlan.underlying_name ~ '.network.d' }}"
     state: directory
@@ -22,6 +23,7 @@
   become: true
   register: _network
   notify: "{{ ansible_role_name ~ ' : reload' }}"
+  when: vxlan.underlying_name is defined
   ansible.builtin.template:
     src: vxlan-drop-in.j2
     dest: "{{ systemd_root ~ '/etc/systemd/network/' ~ vxlan.underlying_name ~ '.network.d/vxlan-' ~ vxlan.name ~ '.conf' }}"
